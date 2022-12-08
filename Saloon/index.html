@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saloon</title>
+    <!-- ===========Fevicon img=============== -->
+    <link href="assets/img/imgg4" rel="icon">
+    <link href="assets/img/logo1.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="carouselengine/jquery.js"></script>
+    <script src="carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="carouselengine/initcarousel-1.css">
+    <script src="carouselengine/initcarousel-1.js"></script>
+</head>
+<style>
+    #bgm {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+    }
+    /* .people{
+        background: url(images/testi.jpg) no-repeat;
+    } */
+</style>
+
+<body>
+    <!-- ---------------------Message Pop------------- -->
+
+    <div class="container">
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-light text-center">Kindly Enter below Information to Connect to an
+                            Agent</h4>
+
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="name" placeholder="name" name="name">
+                            <label for="email">Name:</label>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="phone" placeholder="phone" name="phone">
+                            <label for="email">Phone:</label>
+                        </div>
+                        <!-- <div class="form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="location" placeholder="location"
+                                name="location">
+                            <label for="email">Location:</label>
+                        </div> -->
+                        <div class="mb-3 mt-3">
+                            <label for="comment" class="text-light">Comments:</label>
+                            <textarea class="form-control" rows="3" id="comment" name="text"></textarea>
+                        </div>
+                        <div class="d-grid">
+                        <button type="button" class="btn btn-success  btn-block" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----Button--- -->
+    <div id="bgm">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            <img src="images/message.png" height="40" width="35">
+        </button>
+    </div>
+    <!-- -------------------Navbar---------------- -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/imgg4.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="NavCollapse">
+                <ul class="navbar-nav bg-dark navbar-light ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">ABOUT
+                            US</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">COMPANY PROFILE</a></li>
+                            <li><a class="dropdown-item" href="#">CHAIRMAN'S MESSAGE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">FRANCHISE</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">HAIR & BEAUTY</a></li>
+                            <li><a class="dropdown-item" href="#">HAIRXPRESO</a></li>
+                            <li><a class="dropdown-item" href="#">THE JAWED HABIB</a></li>
+                            <li><a class="dropdown-item" href="#">ACADEMY</a></li>
+                            <li><a class="dropdown-item" href="#">HAIR STUDIO</a></li>
+                            <li><a class="dropdown-item" href="#">FRANCHISE LOGIN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SALONS</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">OUR SERVICES</a></li>
+                            <li><a class="dropdown-item" href="#">NEW TRENDS</a></li>
+                            <li><a class="dropdown-item" href="#">MYTH BUSTERS</a></li>
+                            <li><a class="dropdown-item" href="#">HOME CARE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">EDUCATION</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">MEDIA
+                            CENTER</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">NEWS ROOMS</a></li>
+                            <li><a class="dropdown-item" href="#">BLOG</a></li>
+                            <li><a class="dropdown-item" href="#">SOCIAL MEDIA</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">STORE
+                            LOCATOR</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">HAIR & BEAUTY SALONS</a></li>
+                            <li><a class="dropdown-item" href="#">HAIRXPRESO</a></li>
+                            <li><a class="dropdown-item" href="#">THE JAWED HABIB SALONS</a></li>
+                            <li><a class="dropdown-item" href="#">HAIR STUDIO SALONS</a></li>
+                            <li><a class="dropdown-item" href="#">JAWED HABIB PRO</a></li>
+                            <li><a class="dropdown-item" href="#">JH ACADEMY</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- --------------------Banner----------------- -->
+
+    <div id="captions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#captions" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#captions" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#captions" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#captions" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="images/banner2.jpg"  class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/banner1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/banner3.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/banner4.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#captions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#captions" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+    <br><br><br>
+    <!-- ------------------Main Content---------------------- -->
+    <div class="container">
+        <h2 class="text-center">Explore the World of Beauty</h2>
+        <img class="d-block mx-auto" src="images/heading-bottom.png">
+        <br><br><br>
+        <h6>Jawed Habib (JH) group of companies and associates is one of the leading hair & beauty salon and academy
+            chains in India. We have evolved over the last 3 generations and have adopted the science of understanding
+            and styling hair and not merely cutting or using styling products. All our hair stylists have been
+            meticulously trained in Jawed Habib Academy on these scientific methods of hair cutting and styling to
+            benefit our customers.</h6>
+        <br>
+        <h6 class="text-center">We take pride in saying that we do science-based styling, not product-based.</h6>
+    </div>
+    <br>
+    <!-- ----------------Toast Popups--------------- -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-6">
+                <div class="toast show">
+                    <div class="toast-header">
+                        <strong class="me-auto h6">BOOK YOUR APPOINTMENT NOW</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body">
+                        <p>Available btwn 9am To 9pm.... <br>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente saepe, fugit dolores </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <!-- --------------Card Images------------------- -->
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg1.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">HAIR & BEAUTY</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg2.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">HAIRXPRESO</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg3.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">THE JAWED HABIB</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg5.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">ACADEMY</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg6.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">HAIR STUDIO</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg7.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">HAIR YOGA</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg8.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">JAWD HABIB SPA YOGA</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card border border-danger shadow-lg">
+                    <img src="Images/imgg3.jpg">
+                    <img src="images/imgg4.jpg">
+                    <div class="card-body">
+                        <hr>
+                        <h5 class="text-center">MASAG PARLOR</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <!-- ----------------------background img---------------------- -->
+    <div style="background-image: url(images/barber.jpg); background-repeat: no-repeat; background-size: cover;">
+        <br><br>
+        <h1 class="text-center text-light">Milestones Reached</h1>
+        <img class="d-block mx-auto" src="images/heading-bottom.png">
+        <br><br><br><br><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <h1 class="text-center text-danger">24</h1>
+                    <img class="d-block mx-auto" src="images/heading-bottom.png">
+                    <br>
+                    <p class="text-center text-light">States</p>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <p class="text-center h6 text-light">Cities</p>
+                    <img class="d-block mx-auto" src="images/heading-bottom.png">
+                    <br>
+                    <h1 class="text-center text-danger">110</h1>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <h1 class="text-center text-danger">875</h1>
+                    <img class="d-block mx-auto" src="images/heading-bottom.png">
+                    <br>
+                    <p class="text-center h6 text-light">Outlets</p>
+                </div>
+
+                <div class="col-lg-3 col-sm-12 col-md-6">
+                    <p class="text-center h6 text-light">customers</p>
+                    <img class="d-block mx-auto" src="images/heading-bottom.png">
+                    <br>
+                    <h1 class="text-center text-danger">1500000</h1>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <br><br><br>
+    <!-- -----------------Services---------------------- -->
+    <div class="container">
+        <h1 class="text-center">Our Salon Services</h1>
+        <img class="d-block mx-auto" src="images/heading-bottom.png">
+        <br><br><br>
+        <div class="row">
+            <div class="col-lg-3">
+                <h5>Hair Cut</h5>
+                Your life may not be perfect, but ensure your haircut is!
+                <br><br><br>
+                <h5>Hair Spa</h5>
+                Fresh out of hair spa, your gorgeous hair does all the talking.
+                <br><br><br>
+                <h5>Hair Styling</h5>
+                Great hair doesn’t happen by chance. It happens by appointment!
+                <br><br><br>
+                <h5>Facial</h5>
+                You can never have too many facials!
+                <br><br><br>
+                <h5>Manicure</h5>
+                Nothing improves your mood like a fresh manicure!
+            </div>
+
+            <div class="col-lg-1">
+                <img src="images/sal1.png">
+                <br><br><br>
+                <img src="images/sal2.png">
+                <br><br><br>
+                <img src="images/sal3.png">
+                <br><br><br>
+                <img src="images/sal4.png">
+                <br><br><br>
+                <img src="images/sal5.png">
+            </div>
+
+            <div class="col-lg-4">
+                <img src="images/mirror.png" height="800px">
+            </div>
+
+            <div class="col-lg-1">
+                <img src="images/sal6.png">
+                <br><br><br>
+                <img src="images/sal7.png">
+                <br><br><br>
+                <img src="images/sal8.png">
+                <br><br><br>
+                <img src="images/sal9.png">
+                <br><br><br>
+                <img src="images/sal10.png">
+            </div>
+
+            <div class="col-lg-3">
+                <h5>Hair Coloring</h5>
+                Life is too short to have boring hair.
+                <br><br><br>
+                <h5>Beauty & Grooming</h5>
+                Grooming is the secret of real elegance. Don’t underestimate it.
+                <br><br><br>
+                <h5>Dry Shampoo</h5>
+                Dry shampoo makes dreams last longer!
+                <br><br><br>
+                <h5>Hair Education</h5>
+                Don’t just know about hair. Understand it.
+                <br><br><br>
+                <h5>Pedicure</h5>
+                People who say money can’t buy happiness, have never tried pedicure!
+            </div>
+
+        </div>
+    </div>
+    <br><br><br>
+    <!-- ----------------From The Blog----------------- -->
+    <div style="background-image: url(images/bulbbackground.jpg);background-repeat: no-repeat; background-size: cover;">
+        <br><br>
+        <div class="container">
+            <div>
+                <h1 class="text-center text-light">From The Blogs</h1>
+                <img class="d-block mx-auto" src="images/heading-bottom.png">
+            </div>
+            <br><br><br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card border border-danger" src="images/blog1.jpg" style="width:100%">
+                        <div class="card-body text-light" style="background-color: black;">
+                            <br>
+                            <h4 class="card-title text-center">11 Hair Care Tips From <br> Jawed Habib</h4>
+                            <br>
+                            <p class="card-text text-center text-secondary">A few amazing tips from the man <br> himself
+                                that will help
+                                you set new <br>
+                                standards you maintain your hair....</p>
+                            <p class="text-center text-danger">Xeus ferns</p>
+
+                        </div>
+
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card border border-danger" src="images/blog-2.jpg" style="width:100%">
+                        <div class="card-body text-light" style="background-color: black;">
+                            <br>
+                            <h4 class="card-title text-center">Pre-Conditioning Is <br> Essentail</h4>
+                            <br>
+                            <p class="card-text text-center text-secondary">Conditioning is one of the most <br>
+                                significant steps to keep our hair <br> healthy, we all know; but...</p>
+                            <p class="text-center text-danger">Xeus ferns</p>
+
+                        </div>
+
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card border border-danger" src="images/blog-3.jpg" style="width:100%">
+                        <div class="card-body text-light" style="background-color: black;">
+                            <br>
+                            <h4 class="card-title text-center">Colours Adds Style To Your <br> Hair </h4>
+                            <br>
+                            <p class="card-text text-center text-secondary">We all love style, and colouring our <br>
+                                hair is one of the best ways to look <br> and feel...</p>
+                            <p class="text-center text-danger">Xeus ferns</p>
+
+                        </div>
+
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <!-- -------------------Our Gallery---------------- -->
+    <div class="container shadow-lg">
+        <h1 class="text-center">Our Gallery</h1>
+        <img class="d-block mx-auto" src="images/heading-bottom.png">
+        <br><br><br>
+        <div style="margin:0px auto;">
+
+            <!-- Insert to your webpage where you want to display the carousel -->
+            <div id="amazingcarousel-container-1">
+                <div id="amazingcarousel-1"
+                    style="display:none;position:relative;width:100%;max-width:1920px;margin:0px auto 0px;">
+                    <div class="amazingcarousel-list-container">
+                        <ul class="amazingcarousel-list">
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal1-lightbox.jpg" title="gal1"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal1.jpg" alt="gal1" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal2-lightbox.jpg" title="gal2"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal2.jpg" alt="gal2" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal3-lightbox.jpg" title="gal3"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal3.jpg" alt="gal3" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal4-lightbox.jpg" title="gal4"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal4.jpg" alt="gal4" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal5-lightbox.jpg" title="gal5"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal5.jpg" alt="gal5" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal6-lightbox.jpg" title="gal6"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal6.jpg" alt="gal6" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal7-lightbox.jpg" title="gal7"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal7.jpg" alt="gal7" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal8-lightbox.jpg" title="gal8"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal1.jpg" alt="gal8" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/gal9-lightbox.jpg" title="gal9"
+                                            class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal9.jpg" alt="gal9" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-image"><a href="images/hairbanner-lightbox.jpg"
+                                            title="hairbanner" class="html5lightbox" data-group="amazingcarousel-1"><img
+                                                src="images/gal3.jpg" alt="hairbanner" /></a></div>
+                                    <div class="amazingcarousel-title"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="amazingcarousel-prev"></div>
+                        <div class="amazingcarousel-next"></div>
+                    </div>
+                    <div class="amazingcarousel-nav"></div>
+                    <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">jQuery Scroller</a></div>
+                </div>
+            </div>
+            <!-- End of body section HTML codes -->
+
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-1"></div>
+
+            <div class="col-lg-2">
+                <img class="w-100" src="images/gal1.jpg">
+            </div>
+            <div class="col-lg-2">
+                <img class="w-100" src="images/gal2.jpg">
+            </div>
+            <div class="col-lg-2">
+                <img class="w-100" src="images/gal3.jpg">
+            </div>
+            <div class="col-lg-2">
+                <img class="w-100" src="images/gal4.jpg">
+            </div>
+            <div class="col-lg-2">
+                <img class="w-100" src="images/gal5.jpg">
+            </div>
+
+            <div class="col-lg-1"></div>
+        </div> -->
+    </div>
+    <br><br><br>
+    <!-- ---------------------Why People love us----------------- -->
+    
+    <div class="container border border-2 border-top-0 border-start-0">
+        <h1 class="text-center">Why People Love Us</h1>
+        <img class="d-block mx-auto" src="images/heading-bottom.png">
+        <br><br><br>
+        <div id="People" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ab nesciunt tempore odit illo
+                        porro illum cumque fugiat, nihil perferendis maiores ducimus voluptatibus nam maxime hic
+                        consectetur quam sint sunt et. Deleniti autem voluptas, sint cum pariatur rem ipsam voluptates
+                        explicabo nemo repudiandae? Non dolor aspernatur nam ratione voluptate officiis magni
+                        distinctio! Expedita mollitia, rerum suscipit repellendus accusantium at dicta ab explicabo
+                        sapiente minus nemo, a hic, fuga reiciendis incidunt facere provident. Dolore aliquid quas
+                        aperiam incidunt totam eaque alias fugit ipsum corporis velit. A praesentium recusandae eum
+                        sapiente cum, itaque tenetur doloremque iusto assumenda. Quos sint voluptatum, nihil deleniti ex
+                        assumenda nesciunt in quam illo fugiat illum necessitatibus nemo numquam magni recusandae, quo
+                        placeat modi distinctio quis. Inventore pariatur ex consequuntur odit laborum. Hic eius nulla
+                        odio magnam voluptatum, officia nemo, optio omnis architecto, explicabo molestias! Alias nihil
+                        similique, possimus libero quis eaque eum assumenda labore provident corrupti sit. </p>
+                    <hr style="width: 30%; height: 3px;" class="d-block mx-auto bg-info">
+                    <h5 class="text-center">Richa Chadda</h5>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ab nesciunt tempore odit illo
+                        porro illum cumque fugiat, nihil perferendis maiores ducimus voluptatibus nam maxime hic
+                        consectetur quam sint sunt et. Deleniti autem voluptas, sint cum pariatur rem ipsam voluptates
+                        explicabo nemo repudiandae? Non dolor aspernatur nam ratione voluptate officiis magni
+                        distinctio! Expedita mollitia, rerum suscipit repellendus accusantium at dicta ab explicabo
+                        sapiente minus nemo, a hic, fuga reiciendis incidunt facere provident. Dolore aliquid quas
+                        aperiam incidunt totam eaque alias fugit ipsum corporis velit. A praesentium recusandae eum
+                        sapiente cum, itaque tenetur doloremque iusto assumenda. Quos sint voluptatum, nihil deleniti ex
+                        assumenda nesciunt in quam illo fugiat illum necessitatibus nemo numquam magni recusandae, quo
+                        placeat modi distinctio quis. Inventore pariatur ex consequuntur odit laborum. Hic eius nulla
+                        odio magnam voluptatum, officia nemo, optio omnis architecto, explicabo molestias! Alias nihil
+                        similique, possimus libero quis eaque eum assumenda labore provident corrupti sit. </p>
+                    <hr style="width: 30%; height: 3px;" class="d-block mx-auto bg-info">
+                    <h5 class="text-center">Vishwajeet Singh</h5>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ab nesciunt tempore odit illo
+                        porro illum cumque fugiat, nihil perferendis maiores ducimus voluptatibus nam maxime hic
+                        consectetur quam sint sunt et. Deleniti autem voluptas, sint cum pariatur rem ipsam voluptates
+                        explicabo nemo repudiandae? Non dolor aspernatur nam ratione voluptate officiis magni
+                        distinctio! Expedita mollitia, rerum suscipit repellendus accusantium at dicta ab explicabo
+                        sapiente minus nemo, a hic, fuga reiciendis incidunt facere provident. Dolore aliquid quas
+                        aperiam incidunt totam eaque alias fugit ipsum corporis velit. A praesentium recusandae eum
+                        sapiente cum, itaque tenetur doloremque iusto assumenda. Quos sint voluptatum, nihil deleniti ex
+                        assumenda nesciunt in quam illo fugiat illum necessitatibus nemo numquam magni recusandae, quo
+                        placeat modi distinctio quis. Inventore pariatur ex consequuntur odit laborum. Hic eius nulla
+                        odio magnam voluptatum, officia nemo, optio omnis architecto, explicabo molestias! Alias nihil
+                        similique, possimus libero quis eaque eum assumenda labore provident corrupti sit. </p>
+                    <hr style="width: 30%; height: 3px;" class="d-block mx-auto bg-info">
+                    <h5 class="text-center">Anand Vihar</h5>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ab nesciunt tempore odit illo
+                        porro illum cumque fugiat, nihil perferendis maiores ducimus voluptatibus nam maxime hic
+                        consectetur quam sint sunt et. Deleniti autem voluptas, sint cum pariatur rem ipsam voluptates
+                        explicabo nemo repudiandae? Non dolor aspernatur nam ratione voluptate officiis magni
+                        distinctio! Expedita mollitia, rerum suscipit repellendus accusantium at dicta ab explicabo
+                        sapiente minus nemo, a hic, fuga reiciendis incidunt facere provident. Dolore aliquid quas
+                        aperiam incidunt totam eaque alias fugit ipsum corporis velit. A praesentium recusandae eum
+                        sapiente cum, itaque tenetur doloremque iusto assumenda. Quos sint voluptatum, nihil deleniti ex
+                        assumenda nesciunt in quam illo fugiat illum necessitatibus nemo numquam magni recusandae, quo
+                        placeat modi distinctio quis. Inventore pariatur ex consequuntur odit laborum. Hic eius nulla
+                        odio magnam voluptatum, officia nemo, optio omnis architecto, explicabo molestias! Alias nihil
+                        similique, possimus libero quis eaque eum assumenda labore provident corrupti sit. </p>
+                    <hr style="width: 30%; height: 3px;" class="d-block mx-auto bg-info">
+                    <h5 class="text-center">Vijay Patil</h5>
+                </div>
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#People" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#People" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button> -->
+        </div>
+    </div>
+</div>
+    <br><br><br>
+    <!-- -----------------Footer----------------- -->
+    <footer style="background: black;" class="text-white pt-5 pb-4">
+        <div class="container text-start text-md-left">
+            <div class="row text-start text-md-left">
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                    <h3 class="mb-4 text-light">Location</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <br>
+                    <p class="h5"> Jawed Habib Hair & Beauty Limited Unit # 431/32/33, 4th Floor, Laxmi
+                        Mall, Laxmi Industrial Estate,
+                        New Link Road, Andheri (W) Mumbai - 400053, India,</p>
+                    <br><br>
+                    <h3>Telphone Enquiry</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <br>
+                    <p class="text-danger h5">+91 9890149865</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 mx-auto mt-2">
+                    <h3 class="mb-4 text-light">Jawedhabib</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <br>
+                    <p>
+                        <a href="#" class="text-secondary" style="text-decoration: none; font-size: large;">>> About
+                            Us</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-secondary" style="text-decoration: none; font-size: large;">>> Contact
+                            Us</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-secondary" style="text-decoration: none; font-size: large;">>>
+                            Franchise</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-secondary" style="text-decoration: none; font-size: large;">>>
+                            Education</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 mx-auto mt-2">
+                    <h3 class="mb-4 text-light">Recent Blog</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <br>
+                    <p>
+                        <a href="#" class="text-danger" style="text-decoration: none; font-size: large;">Change Your
+                            Cleansing Routine <span class="text-white">September 3, 2022</span> </a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-danger" style="text-decoration: none; font-size: large;">AUTUMN /
+                            WINTER CARE <span class="text-white">September 3, 2022</span> </a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-danger" style="text-decoration: none; font-size: large;">11 Hair Care
+                            Tips From Jawed Habib <span class="text-white">November 1, 2022</span> </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 mx-auto mt-2">
+                    <h3 class="mb-4 text-light">NewsLetter</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <br>
+                    <input type="text" placeholder="Enter Email"
+                        style="padding: 11px; width: 100%; background: black;"></input>
+                    <br><br><br>
+                    <h3>Follow Us</h3>
+                    <div class="progress" style="height:2px">
+                        <div class="progress-bar bg-danger" style="width:40%;height:10px"></div>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook p-3 text-secondary" style="font-size:30px;"></i>
+                        <i class="fa-brands fa-twitter p-3 text-secondary" style="font-size: 30px;"></i>
+                        <i class="fa-brands fa-instagram p-3 text-secondary" style="font-size: 30px;"></i>
+                        <i class="fa-brands fa-linkedin p-3 text-secondary" style="font-size: 30px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg-dark text-secondary pt-4 pb-3">
+        <div class="container">
+            <div class="row text-center text-md-left">
+                <div class="col-lg-6">
+                    <p>Jaweb Habib 2022. All Rights Reserved.</p>
+                </div>
+
+                <div class="col-lg-6">
+                    <p>Terms and Conditions / Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
